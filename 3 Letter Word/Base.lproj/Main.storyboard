@@ -70,15 +70,20 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="oMc-I6-KVd"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="MLt-OI-KUj" appends="YES" id="2eu-Ws-ccC"/>
+                                        </connections>
                                     </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="JNT-Ky-8pg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="8tS-em-8Qi"/>
                             <constraint firstItem="JNT-Ky-8pg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="WDQ-pS-7WQ"/>
@@ -86,8 +91,20 @@
                             <constraint firstItem="JNT-Ky-8pg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="z68-YC-TdS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="currentLetter" destination="9Ip-qq-ZxC" id="Fz2-YZ-J02"/>
+                        <outlet property="horizStackView" destination="QnU-Rd-Dci" id="jLa-x0-oWT"/>
+                        <outletCollection property="lettersLabels" destination="sSO-Gq-hR6" collectionClass="NSMutableArray" id="Pr9-dh-64z"/>
+                        <outletCollection property="lettersLabels" destination="pC8-2N-SyF" collectionClass="NSMutableArray" id="goh-DG-KNJ"/>
+                        <outletCollection property="lettersLabels" destination="yjV-GU-cLB" collectionClass="NSMutableArray" id="IfH-gk-2DV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="MLt-OI-KUj">
+                    <connections>
+                        <action selector="whenTapped:" destination="BYZ-38-t0r" id="OQl-JO-QP9"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="30" y="56"/>
         </scene>
