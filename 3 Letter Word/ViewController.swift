@@ -30,12 +30,32 @@ class ViewController: UIViewController
 
     @IBAction func whenTapped(_ sender: UITapGestureRecognizer)
     {
+        //Initialize Current Letter and label
         currentLetterA = letters[counter]
         currentLetter.text = currentLetterA
+        //recognize where the user is tapping
+        let selectedPoint = sender.location(in: horizStackView)
+        for label in lettersLabels
+        {
+            if label.frame.contains(selectedPoint)
+            {
+                label.text = "\(currentLetterA)"
+            }
+        }
+        counter += 1
+        if counter == 26
+            
+        {
+            counter = 0
+            currentLetterA = letters[counter]
+            currentLetter.text = currentLetterA
+            for label in self.lettersLabels
+            {
+                    label.text = "?"
     }
-    
-    
     
     
 }
 
+}
+}
